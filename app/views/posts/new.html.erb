@@ -1,0 +1,9 @@
+<div class="container">
+<h1>Nouvel Article</h1>
+  <%= simple_form_for(@post) do |f| %>
+    <%= f.input :title, input_html: { placeholder: "Rédiger le titre" }, label: "Titre" %>
+    <%= f.input :description, input_html: { placeholder: "Description" }, label: "Une description brêve de l'article" %>
+    <%= f.input :body, include_blank: "Rédiger votre article", label: "La Story" %>
+    <%= f.button :submit, class: "btn btn-primary" %>
+  <% end %>
+</div>

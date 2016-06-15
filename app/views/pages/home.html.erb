@@ -1,2 +1,67 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(180,180,180,0.8) 0%, rgba(10,10,10,0.6) 50%), url(<%= image_url 'background.jpg' %>);">
+  <div class="banner-content">
+    <h1>Dans La Musette</h1>
+    <p>Le cyclisme à la sauce ketchup mayot</p>
+    <a class="btn btn-primary btn-lg">GET IT</a>
+  </div>
+</div>
+
+
+
+
+<div class="container">
+  <div class="row text-center">
+    <h1>Dans La Musette</h1>
+    <p>Le cyclisme à la sauce ketchup mayot</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row text-center">
+    <h3>Le cyclisme autrement</h3>
+    <p>Né sur Twitter, nous aimons le vélo, attristé par la façon dont les médias traditionnels traitent le vélo (quand il le traite), ici on parle vélo comme on aurait aimé qu'on nous le raconte, avec passion, ferveur et parfois un peu chauvinisme</p>
+  </div>
+
+  <div class="container">
+    <div class="row">
+    <% @posts.each do |post| %>
+      <div class="col-xs-12 col-sm-4">
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+          <div class="card-category">Popular</div>
+          <div class="card-description">
+            <h2><%= post.title %></h2>
+            <p><%= post.description %></p>
+          </div>
+          <img class="card-user avatar" src="user.jpg">
+          <a class="card-link" href="#" ></a>
+        </div>
+      </div>
+    <%end%>
+
+    </div>
+  </div>
+
+
+  <div class="row">
+    <h3 class="text-center">La communauté : #JeSuisUneMusette</h3>
+    <div class="col-md-6 text-center">
+
+    <h4> Amoureux du vélo </h4>
+    <p>Rejoint la communauté et reçoit directement les meilleurs articles par mail</p>
+    </div>
+    <div class="col-md-6 text-center">
+    <h4> Cycliste</h4>
+    <p>Accès au calendrier des courses pret de chez toi</p>
+    <p>Chaque mois recoit le planning des courses autour de chez toi qui te correspondent</p>
+    <p>Retrouve d'autres musettes prêt de chez pour bordurer en famille</p>
+    </div>
+  </div>
+
+  <div class="row">
+    <h3 class="text-center">Le calendrier</h3>
+    <p> Ce calendrier on l'a fait pour nous, on l'avoue. On galèrait tellement à faire notre planning de course sur l'année. A passer a coté de la course car on a raté l'inscription. Tu peux le consulter librement, ajouter les courses qu'on aurait raté, construire ton planning et même t'inscrire et recevoir ton planning personnalisé tous les mois.</p>
+
+  </div>
+</div>
+
+
