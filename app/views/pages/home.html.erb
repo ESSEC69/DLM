@@ -2,7 +2,7 @@
   <div class="banner-content">
     <h1>Dans La Musette</h1>
     <p>Le cyclisme à la sauce ketchup mayot</p>
-    <a class="btn btn-primary btn-lg">GET IT</a>
+
   </div>
 </div>
 
@@ -11,13 +11,13 @@
   <div class="wrapper-media">
     <div class="row text-center">
       <h3>Le cyclisme autrement</h3>
-      <p>Né sur Twitter, nous aimons le vélo, attristé par la façon dont les médias traditionnels traitent le vélo (quand il le traite), ici on parle vélo comme on aurait aimé qu'on nous le raconte, avec passion, ferveur et parfois un peu chauvinisme</p>
+      <p>La seul règle, on parle vélo comme l'aime, avec passion, ferveur et chauvinisme du 1er au 21 juillet.</p>
     </div>
-
     <div class="container">
       <div class="row">
       <% @posts.each do |post| %>
         <div class="col-xs-12 col-sm-4">
+          <%= link_to post_path(post) do %>
           <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
             <div class="card-category">Popular</div>
             <div class="card-description">
@@ -25,16 +25,18 @@
               <p><%= post.description %></p>
             </div>
             <img class="card-user avatar" src="user.jpg">
-            <a class="card-link" href="#" ></a>
+
           </div>
+          <%end%>
         </div>
       <%end%>
-
       </div>
     </div>
   </div>
+</div>
 
-
+<!-- <div class="wrapper-community">
+  <div class="container">
   <div class="row">
     <h3 class="text-center">La communauté : #JeSuisUneMusette</h3>
     <div class="col-md-6 text-center">
@@ -49,6 +51,8 @@
     <p>Retrouve d'autres musettes prêt de chez pour bordurer en famille</p>
     </div>
   </div>
+  </div>
+</div>
 
   <div class="row">
     <h3 class="text-center">Le calendrier</h3>
@@ -56,5 +60,5 @@
 
   </div>
 </div>
-
+ -->
 
