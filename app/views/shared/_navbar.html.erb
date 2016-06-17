@@ -8,20 +8,11 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <%= link_to "Story", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "Calendrier", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "LeHub", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-    <%= link_to "#JeSuisUneMusette", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <!-- Different navigation if login or not -->
     <% if user_signed_in? %>
 
-      <!-- Notification -->
-      <%= link_to "#", class: "navbar-wagon-item navbar-wagon-link" do %>
-        <div class="badge-container">
-          <i class="fa fa-envelope-o"></i>
-          <div class="badge badge-blue">3</div>
-        </div>
-      <% end %>
+
 
       <!-- Profile picture and dropdown -->
       <div class="navbar-wagon-item">
@@ -50,9 +41,8 @@
     <% else %>
 
       <!-- Login text link -->
-      <%= link_to t(".top_call_to_action", default: "Connexion"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
 
-      <%= link_to "Se connecter", "#", class: "navbar-wagon-item navbar-wagon-link", "data-toggle" => "modal", "data-target" => "#log_in" %>
+      <%= link_to "Se connecter", new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
 
     <% end %>
 
