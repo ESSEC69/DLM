@@ -1,40 +1,101 @@
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(180,180,180,0.8) 0%, rgba(10,10,10,0.6) 50%), url(<%= image_url 'background.jpg' %>);">
+<div class="banner" style="background-image: url(<%= image_url 'Homepage.jpg' %>);">
+  <div class="banner-logo">
+  <%= image_tag "DLM_LOGO.png" %>
+  </div>
+  <div class="btn-login">
+    LOG
+  </div>
   <div class="banner-content">
-    <h1>Dans La Musette</h1>
-    <p>Le cyclisme à la sauce ketchup mayot</p>
-
+    <h1>LE <span style="color:#00ffff">CYCLISME</span>  A LA SAUCE</h1> <h1>KETCHUP-MAYO<span style="color:#ffff00"> JAUNE</span>. </h1>
   </div>
 </div>
 
+<div class="bandeau navbar-fixed-top text-center">
+      <%= link_to root_path do %>
+        <%= image_tag "DLM_LOGO_small.png" %>
+      <% end %>
+</div>
 
-<div class="container">
-  <div class="wrapper-media">
-    <div class="row text-center">
-      <h3>Le cyclisme autrement</h3>
-      <p>La seul règle, on parle vélo comme l'aime, avec passion, ferveur et chauvinisme du 1er au 21 juillet.</p>
+<div class="presentation">
+  <div class="container">
+    <div class="wrapper-media">
+      <div class="row text-center">
+        <h1 style ="color: #00ffff"> <strong> DERNIERS ARTICLES </strong></h1>
+        <h4>Lisez nos derniers articles, ils sont très cool.</h4>
+      </div>
     </div>
-    <div class="container">
+  </div>
+  <div class="container">
+    <div class="wrapper-article">
       <div class="row">
-      <% @posts.each do |post| %>
-        <div class="col-xs-12 col-sm-4">
-          <%= link_to post_path(post) do %>
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-            <div class="card-category">Popular</div>
-            <div class="card-description">
-              <h2><%= post.title %></h2>
-              <p><%= post.description %></p>
-            </div>
-            <img class="card-user avatar" src="user.jpg">
-
+        <% @posts.each do |post| %>
+          <div class="col-md-4">
+          <div class="case">
+            <%= link_to post_path(post) do %>
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+                  <div class="card-category">Popular</div>
+                  <div class="card-description">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.description %></p>
+                  </div>
+                  <img class="card-user avatar" src="user.jpg">
+                </div>
+            <%end%>
           </div>
-          <%end%>
-        </div>
-      <%end%>
+          </div>
+        <%end%>
+      </div>
+      <div class="row">
+        <% @posts.each do |post| %>
+          <div class="col-md-4">
+          <div class="case">
+            <%= link_to post_path(post) do %>
+                <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
+                  <div class="card-category">Popular</div>
+                  <div class="card-description">
+                    <h2><%= post.title %></h2>
+                    <p><%= post.description %></p>
+                  </div>
+                  <img class="card-user avatar" src="user.jpg">
+                </div>
+            <%end%>
+          </div>
+          </div>
+        <%end%>
       </div>
     </div>
   </div>
 </div>
 
+
+
+<% content_for(:after_js) do %>
+  <%= javascript_tag do %>
+    $(document).ready(function() {
+
+      $(".bandeau").hide(); //hide your div initially
+          var topOfOthDiv = $(".presentation").offset().top;
+          $(window).scroll(function() {
+              if($(window).scrollTop() > topOfOthDiv) {
+                  console.log("hello");
+                  $(".bandeau").show();
+              }
+
+              if($(window).scrollTop() < topOfOthDiv) {
+                  console.log(topOfOthDiv);
+                  console.log($(window).scrollTop());
+                  console.log("oups");
+                  $(".bandeau").hide();
+              }
+
+          });
+
+
+
+
+    });
+  <% end %>
+<% end %>
 <!-- <div class="wrapper-community">
   <div class="container">
   <div class="row">

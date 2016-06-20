@@ -3,10 +3,24 @@
  * (margin/padding adjustments)
  * ------------------------------------- */
 
-.wrapper-media {
-  height:50vh;
+
+.wrapper-article {
+  margin: 0vh 20vw;
 }
 
-.wrapper-community {
-  background-color : $gray-lighter;
+.case {
+  display:flex;
+  justify-content: space-around;
 }
+
+.presentation {
+  height : 100vh;
+}
+
+
+.bandeau {
+  height : 40px;
+  background-color: $blue;
+  padding : 5px;
+}
+
