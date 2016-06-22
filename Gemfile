@@ -18,6 +18,7 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 
 gem 'bootsy'
+gem 'friendly_id', '~> 5.1.0'
 
 group :development, :test do
   gem 'binding_of_caller'

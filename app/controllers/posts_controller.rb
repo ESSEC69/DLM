@@ -50,16 +50,16 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-    if params[:id].to_i-1 == 0
+    if @post.id.to_i-1 == 0
       @previous_post = Post.last
     else
-      @previous_post = Post.find(params[:id].to_i-1)
+      @previous_post = Post.find(@post.id.to_i - 1)
     end
 
-    if params[:id].to_i == Post.all.length
+    if @post.id.to_i == Post.all.length
       @next_post = Post.first
     else
-      @next_post = Post.find(params[:id].to_i+1)
+      @next_post = Post.find(@post.id.to_i + 1)
     end
   end
 
