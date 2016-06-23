@@ -43,3 +43,23 @@
 .card-link:hover{
   opacity: 0.1;
 }
+
+.card-text{
+  opacity:0;
+}
+.card-text:hover{
+  opacity:1;
+  background-color: $blue;
+  color:$yellow;
+}
+
+
+
+.card:hover{
+  background-image: none !important;
+  background-color: $blue;
+  opacity:1 !important;
+  color:$yellow;
+}
+
+

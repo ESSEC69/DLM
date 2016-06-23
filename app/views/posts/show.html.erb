@@ -5,6 +5,12 @@
       <% end %>
 </div>
 
+<div class="banner-article" style="background-image: url(<%="http://res.cloudinary.com/dni1kt5ya/image/upload/#{@post.banner.filename.to_s}"%>); ">
+  <div class="banner-content">
+    <h1><span style="color:#ffff00"><%= @post.numerotation %>. </span> <span style="color:#00006d"> <%=@post.title.upcase %></span></h1>
+  </div>
+</div>
+
 
 
 

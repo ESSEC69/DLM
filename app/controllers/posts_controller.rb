@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
 
-  before_action :set_post, only: [ :show ]
+  before_action :set_post, only: [ :show, :edit, :update ]
 
   def index
     @posts = Post.all
@@ -16,6 +16,15 @@ class PostsController < ApplicationController
   end
 
   def edit
+  end
+
+  def update
+    @post.update(post_params)
+    if @post.save
+      redirect_to root_path
+    else
+      render :edit
+    end
   end
 
   def public
@@ -36,8 +45,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def update
-  end
+
 
   def destroy
   end
@@ -45,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :description, :bootsy_image_gallery_id)
+    params.require(:post).permit(:title, :body, :description, :bootsy_image_gallery_id, :banner, :photo_banner, :vignette, :vignette_banner)
   end
 
   def set_post
