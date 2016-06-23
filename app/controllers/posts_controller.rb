@@ -53,7 +53,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :description, :bootsy_image_gallery_id, :banner, :photo_banner, :vignette, :vignette_banner)
+    params.require(:post).permit(:title, :body, :description, :bootsy_image_gallery_id, :banner, :banner_cache, :vignette, :vignette_cache)
   end
 
   def set_post
