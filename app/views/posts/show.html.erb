@@ -24,33 +24,47 @@
 
 <div class="wrapper-navigation">
   <div class="navigation">
-    <h4>Précédent</h4>
-        <%= link_to post_path(@previous_post) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-              <div class="card-category">Popular</div>
-              <div class="card-description">
-                <h2><%= @previous_post.title %></h2>
-                <p><%= @previous_post.description %></p>
+    <h4 class="text-center go">Précédent</h4>
+        <div class="case">
+          <%= link_to post_path(@previous_post) do %>
+              <div class="card">
+                <div class="bg" style="background-image: url(<%="http://res.cloudinary.com/dni1kt5ya/image/upload/#{@previous_post.vignette.filename.to_s}"%>); ">
+                </div>
+                <div class="bg2">
+                    <div class="cta">
+                    <h1 class="text-center"><%= @previous_post.id %>.</h1>
+                    <p class="text-center"><%= @previous_post.title %></p>
+                    </div>
+                    <div class="go text-center">
+                      GO
+                    </div>
+                </div>
               </div>
-              <img class="card-user avatar" src="user.jpg">
-            </div>
-        <%end%>
+          <%end%>
+        </div>
   </div>
 
 
 
   <div class="navigation">
-   <h4>Suivant</h4>
-        <%= link_to post_path(@next_post) do %>
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-              <div class="card-category">Popular</div>
-              <div class="card-description">
-                <h2><%= @next_post.title %></h2>
-                <p><%= @next_post.description %></p>
+   <h4 class="text-center go">Suivant</h4>
+        <div class="case">
+          <%= link_to post_path(@next_post) do %>
+              <div class="card">
+                <div class="bg" style="background-image: url(<%="http://res.cloudinary.com/dni1kt5ya/image/upload/#{@next_post.vignette.filename.to_s}"%>); ">
+                </div>
+                <div class="bg2">
+                    <div class="cta">
+                    <h1 class="text-center"><%= @next_post.id %>.</h1>
+                    <p class="text-center"><%= @next_post.title %></p>
+                    </div>
+                    <div class="go text-center">
+                      GO
+                    </div>
+                </div>
               </div>
-              <img class="card-user avatar" src="user.jpg">
-            </div>
-        <%end%>
+          <%end%>
+        </div>
   </div>
 </div>
 

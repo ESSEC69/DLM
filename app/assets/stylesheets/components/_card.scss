@@ -106,12 +106,37 @@
    }
 }
 
-.go{
+.card .bg2{
+  .go{
+  position:absolute;
   border: 3px solid $yellow;
   background-color: $green;
   color:$yellow;
   padding:2px;
+  bottom:4px;
+  width:100%;
+
+  }
+
+  .cta h1 {
+    position:absolute;
+    bottom:28px;
+  }
+
+  // .cta p {
+  //  position:absolute;
+  //  top:10px;
+
+  // }
 }
 
+.go{
+
+  border: 3px solid $yellow;
+  background-color: $green;
+  color:$yellow;
+  padding:2px;
+
+  }
 
 

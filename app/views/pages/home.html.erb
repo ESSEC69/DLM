@@ -30,7 +30,7 @@
   <div class="container">
     <div class="wrapper-article">
       <div class="row">
-        <% @posts.each do |post| %>
+        <% @posts1.each do |post| %>
           <div class="col-md-4">
           <div class="case">
             <%= link_to post_path(post) do %>
@@ -38,8 +38,8 @@
                   <div class="bg" style="background-image: url(<%="http://res.cloudinary.com/dni1kt5ya/image/upload/#{post.vignette.filename.to_s}"%>); ">
                   </div>
                   <div class="bg2">
-                      <div class="cta">
-                      <h1 class="text-center"><%= post.id %>.</h1>
+                      <div class="cta text-center">
+                      <h1 class="text-center"><%= post.numerotation %>.</h1>
                       <p class="text-center"><%= post.title %></p>
                       </div>
                       <div class="go text-center">
@@ -53,7 +53,7 @@
         <%end%>
       </div>
       <div class="row">
-        <% @posts.each do |post| %>
+        <% @posts2.each do |post| %>
           <div class="col-md-4">
           <div class="case">
             <%= link_to post_path(post) do %>
@@ -61,8 +61,8 @@
                   <div class="bg" style="background-image: url(<%="http://res.cloudinary.com/dni1kt5ya/image/upload/#{post.vignette.filename.to_s}"%>); ">
                   </div>
                   <div class="bg2">
-                      <div class="cta">
-                      <h1 class="text-center"><%= post.id %>.</h1>
+                      <div class="cta text-center">
+                      <h1 class="text-center"><%= post.numerotation %>.</h1>
                       <p class="text-center"><%= post.title %></p>
                       </div>
                       <div class="go text-center">
