@@ -1,3 +1,9 @@
+<% content_for :meta_title, @posts.title %>
+<% content_for :meta_description, @posts.description %>
+<% content_for :meta_image, @product.vignette.url %>
+
+
+
 
 <div class="bandeau  text-center navbar-fixed-top">
       <%= link_to root_path do %>
@@ -18,6 +24,8 @@
 <div class="wrapper-text">
 <h4 class="text-center"> <%= @post.title %> </h4>
 <p> <%= @post.body.html_safe %></p>
+<iframe src="//giphy.com/embed/l71kleRwrkxxK" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 </div>
 </div>
 
@@ -68,4 +76,3 @@
   </div>
 </div>
 
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5771299bf5e39567"></script>

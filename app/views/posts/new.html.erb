@@ -1,3 +1,4 @@
+<% if current_user %>
 <div class="container">
 <h1>Nouvel Article</h1>
   <%= simple_form_for(@post) do |f| %>
@@ -13,3 +14,9 @@
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
 </div>
+<% else %>
+ OUPS
+
+<%end%>
+
+

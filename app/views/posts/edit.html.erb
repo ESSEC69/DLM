@@ -1,15 +1,17 @@
-<div class="container">
-<h1>Nouvel Article</h1>
-  <%= simple_form_for(@post) do |f| %>
-    <%= f.input :title, input_html: { placeholder: "Rédiger le titre" }, label: "Titre" %>
-    <%= f.input :description, input_html: { placeholder: "Description" }, label: "Une description brêve de l'article" %>
-    <p>Attention: Upload une image en format large cad un peu pret la meme forme qu'elle doit avoir a l'ecran et modifie l'image sur photoshop avant</p>
-    <%= f.input :banner %>
-    <%= f.input :banner_cache, as: :hidden %>
-    <p>175 x 175</p>
-    <%= f.input :vignette %>
-    <%= f.input :vignette_cache, as: :hidden %>
-    <%= f.input :body, as: :bootsy, include_blank: "Rédiger votre article", label: "La Story" %>
-    <%= f.button :submit, class: "btn btn-primary" %>
-  <% end %>
-</div>
+<% if current_user %>
+  <div class="container">
+  <h1>Nouvel Article</h1>
+    <%= simple_form_for(@post) do |f| %>
+      <%= f.input :title, input_html: { placeholder: "Rédiger le titre" }, label: "Titre" %>
+      <%= f.input :description, input_html: { placeholder: "Description" }, label: "Une description brêve de l'article" %>
+      <p>Attention: Upload une image en format large cad un peu pret la meme forme qu'elle doit avoir a l'ecran et modifie l'image sur photoshop avant</p>
+      <%= f.input :banner %>
+      <%= f.input :banner_cache, as: :hidden %>
+      <p>175 x 175</p>
+      <%= f.input :vignette %>
+      <%= f.input :vignette_cache, as: :hidden %>
+      <%= f.input :body, as: :bootsy, include_blank: "Rédiger votre article", label: "La Story" %>
+      <%= f.button :submit, class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<%end%>
