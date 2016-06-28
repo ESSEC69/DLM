@@ -1,22 +1,39 @@
-<h4 class = "text-center"> Articles </h4>
-<p class= "text-center"> #vtt       #triathlon        #cocorico       #sagan       #TDF       #WTF</p>
+<div class="bandeau  text-center navbar-fixed-top">
+      <%= link_to root_path do %>
+        <%= image_tag "DLM_LOGO_small.png" %>
+      <% end %>
+</div>
 
+
+
+<div class="wrapper-index" style = "min-height: 90vh; margin-top: 50px;">
+<h1 class="text-center"><span style="color:#00ffff">LES ARTICLES</span> </h1
 <div class="container">
-  <% @posts.each do |post| %>
-  <div class="row">
-    <%= link_to post_path(post) do %>
-    <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-      <div class="card-category">Popular</div>
-      <div class="card-description">
-        <h2><%= post.title %></h2>
-        <p><%= post.description %></p>
+ <div class="row">
+  <%@posts.each do |post| %>
+    <div class="col-md-2">
+      <div class="case">
+        <%= link_to post_path(post) do %>
+            <div class="card">
+              <div class="bg" style="background-image: url(<%="http://res.cloudinary.com/dni1kt5ya/image/upload/#{post.vignette.filename.to_s}"%>); ">
+              </div>
+              <div class="bg2">
+                  <div class="cta text-center">
+                  <h1 class="text-center"><%= post.numerotation %>.</h1>
+                  <p class="text-center"><%= post.title %></p>
+                  </div>
+                  <div class="go text-center">
+                    GO
+                  </div>
+              </div>
+            </div>
+        <%end%>
       </div>
-      <img class="card-user avatar" src="user.jpg">
 
     </div>
-    <%end%>
-  </div>
   <%end%>
+ </div>
+ </div>
 </div>
 
 
