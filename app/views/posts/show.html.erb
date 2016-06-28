@@ -2,9 +2,6 @@
 <% content_for :meta_description, @post.description %>
 <% content_for :meta_image, @post.vignette.url %>
 
-
-
-
 <div class="bandeau  text-center navbar-fixed-top">
       <%= link_to root_path do %>
         <%= image_tag "DLM_LOGO_small.png" %>
@@ -24,7 +21,7 @@
 <div class="wrapper-text">
 <h4 class="text-center"> <%= @post.title %> </h4>
 <p> <%= @post.body.html_safe %></p>
-<iframe src="//giphy.com/embed/l71kleRwrkxxK" width="480" height="360" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+
 
 </div>
 </div>
