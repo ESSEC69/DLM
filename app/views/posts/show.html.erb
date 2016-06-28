@@ -1,6 +1,6 @@
 <% content_for :meta_title, @post.title %>
 <% content_for :meta_description, @post.description %>
-<% content_for :meta_image, @post.vignette%>
+<% content_for :meta_image, @post.vignette.url%>
 
 <div class="bandeau  text-center navbar-fixed-top">
       <%= link_to root_path do %>
