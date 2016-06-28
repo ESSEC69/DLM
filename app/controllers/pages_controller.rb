@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @posts = Post.all.last(6).reverse
+    @posts = Post.all.last(5).reverse
     if @posts.length < 4
     @posts1 = @posts
     else
