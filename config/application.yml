@@ -4,4 +4,4 @@
 CLOUDINARY_URL: "cloudinary://267286923493555:0PieHGcNEjVdPa3me_1jEa7gZsw@dni1kt5ya"
 
 production:
-  HOST: 'dlmv1.herokuapp.com'
+  HOST: 'danslamusette.fr'
